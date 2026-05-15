@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio Pilar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="#inicio">Inicio</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <div class="page-body">
+
+    <!-- INICIO -->
+    <section id="inicio" class="section">
+      <div class="overlay"></div>
+
+      <!-- CONTENIDO -->
+      <div class="hero">
+
+        <!-- TEXTO IZQUIERDA -->
+        <div class="hero-text">
+          <span class="nombre">PILAR FLORES</span>
+          <h1>
+            Desarrolladora <br>
+            Full-Stack
+          </h1>
+        </div>
+
+        <!-- ICONOS DERECHA -->
+        <div class="hero-tech">
+          <div class="icons">
+            <img src="img/ts.png" alt="">
+            <img src="img/angular.png" alt="">
+            <img src="img/firebase.png" alt="">
+            <img src="img/android.png" alt="">
+          </div>
+          <div class="linea"></div>
+        </div>
+
+      </div>
+    </section>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" class="section">
+    <div class="overlay"></div>
+
+    <div class="sobre-container">
+
+      <!-- TITULO -->
+      <h2 class="sobre-titulo">Sobre mí</h2>
+
+      <!-- RECTANGULO -->
+      <div class="sobre-card">
+
+        <!-- FOTO -->
+        <div class="sobre-img">
+          <img src="img/perfil.png" alt="Pilar Flores">
+          <p class="nombre">Pilar Flores</p>
+          <span class="rol">Programadora Junior</span>
+        </div>
+
+        <!-- TEXTO -->
+        <div class="sobre-texto">
+          <p>
+            Mi nombre es Pilar Flores, soy <span class="highlight">Técnica Universitaria en Programación</span> y actualmente me encuentro
+            en búsqueda de mi primera experiencia profesional en el área de <span class="highlight">desarrollo de software</span>.
+             Durante mi formación trabajé en distintos proyectos académicos donde desarrollé <span class="highlight">aplicaciones web y móviles</span>,
+             utilizando tecnologías como <span class="highlight">Angular</span>, <span class="highlight">TypeScript</span>, <span class="highlight">Firebase</span> y <span class="highlight">bases de datos SQL</span>,
+             además de desarrollar <span class="highlight">APIs REST</span> y trabajar con control de versiones mediante <span class="highlight">Git</span>.
+          </p>
+          <p>
+            Me considero una persona <span class="highlight">responsable</span>, con <span class="highlight">buena capacidad de aprendizaje</span> y muchas ganas de seguir
+            <span class="highlight">creciendo profesionalmente</span> dentro del <span class="highlight">área tecnológica</span>, aportando <span class="highlight">compromiso y trabajo en equipo</span>.
+          </p>
+
+          <!-- ENLACES -->
+          <div class="sobre-enlaces">
+            <a href="mailto:Pilar.flores04@gmail.com" class="email-link">Pilar.flores04@gmail.com</a>
+            <a href="https://linkedin.com/in/pilar-flores-626607306" target="_blank" rel="noopener" class="linkedin-link">LinkedIn</a>
+            <a href="https://github.com/Pii005" target="_blank" rel="noopener" class="github-link">GitHub</a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="section">
+    <div class="overlay"></div>
+
+    <div class="proyectos-container">
+      <!-- TITULO -->
+      <h2 class="proyectos-titulo">Proyectos</h2>
+
+      <!-- CARDS -->
+      <div class="proyectos-grid">
+
+        <!-- PROYECTO 1 -->
+        <div class="proyecto-card">
+          <h3>Sistema de Clínica Online</h3>
+          <p>
+            Plataforma integral de gestión médica. Los pacientes pueden registrarse, solicitar turnos con especialistas y acceder a recetas y comentarios. Los especialistas gestionan sus horarios, aceptan/rechazan turnos y registran atenciones. Admin gestiona especialistas y sistema.
+          </p>
+          <div class="proyecto-tech">
+            <span>TypeScript</span>
+            <span>Angular</span>
+            <span>Firebase</span>
+            <span>Supabase</span>
+          </div>
+          <a href="https://github.com/Pii005/tp-clinica" class="btn-github" target="_blank">Ver en GitHub →</a>
+        </div>
+
+        <!-- PROYECTO 2 (DESTACADO) -->
+        <div class="proyecto-card proyecto-destacado">
+          <h3>Sistema de Comandas Móvil</h3>
+          <p>
+            App móvil para gestionar comandas de restaurantes: el cliente solicita pedidos, el mozo/chef los recibe y los marca como listos. Incluye gestión de productos, mesas y reportes.
+          </p>
+          <div class="proyecto-tech">
+            <span>TypeScript</span>
+            <span>Ionic</span>
+            <span>Firebase</span>
+            <span>Android Studio</span>
+          </div>
+          <a href="https://github.com/lprovenzano/cocoders-2025" class="btn-github" target="_blank">Ver en GitHub →</a>
+        </div>
+
+        <!-- PROYECTO 3 -->
+        <div class="proyecto-card">
+          <h3>Sala de Juegos Online</h3>
+          <p>
+            Plataforma de juegos con registro/login donde el usuario compite en 4 modos: Ahorcado, Mayor/Menor de cartas, Ordenar números (10 niveles) y trivia de países vía API. Se guardan puntajes y se muestra ranking por juego.
+          </p>
+          <div class="proyecto-tech">
+            <span>TypeScript</span>
+            <span>Angular</span>
+            <span>Firebase</span>
+            <span>API REST</span>
+          </div>
+          <a href="https://github.com/Pii005/tp-sala-juegos/tree/main" class="btn-github" target="_blank">Ver en GitHub →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section">
+    <div class="overlay"></div>
+
+    <div class="contacto-container">
+      <div class="contact-card">
+        <h2>Contacto</h2>
+        <p>Dejá tus datos y te responderé lo antes posible.</p>
+
+        <form class="contact-form" action="#" onsubmit="return false;">
+          <label>
+            <span>Nombre</span>
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="tu@ejemplo.com" required />
+          </label>
+
+          <label>
+            <span>Motivo de consulta</span>
+            <textarea name="motivo" rows="4" placeholder="Escribí tu mensaje..." required></textarea>
+          </label>
+
+          <button type="submit" class="btn-github">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+
+</body>
+</html>

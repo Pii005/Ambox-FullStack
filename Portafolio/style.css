@@ -1,0 +1,648 @@
+
+
+/*# sourceMappingURL=style.css.map */
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  }
+
+/* SCROLL SUAVE */
+html {
+scroll-behavior: smooth;
+scroll-snap-type: y proximity;
+}
+
+/* NAVBAR */
+.navbar {
+position: fixed;
+top: 0;
+width: 100%;
+display: flex;
+justify-content: center;
+gap: 30px;
+padding: 15px;
+z-index: 1000;
+background: rgba(0, 0, 0, 0.4);
+backdrop-filter: blur(10px);
+}
+
+.navbar a {
+color: white;
+text-decoration: none;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.navbar a:hover {
+color: #8ab4f8;
+}
+
+/* SECCIONES */
+.section {
+min-height: 100vh;
+width: 100%;
+position: relative;
+scroll-snap-align: start;
+
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: white;
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+/* CONTACTO: sin snap y min-height para que el footer sea visible */
+#contacto {
+  min-height: 100vh;
+  scroll-snap-align: none;
+  display: block;
+  padding-bottom: 0;
+}
+
+ /* INICIO */
+/* HERO LAYOUT */
+.hero {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 80px;
+}
+
+/* TEXTO IZQUIERDA */
+.hero-text {
+  max-width: 600px;
+}
+
+.nombre {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #ccc;
+}
+
+.hero-text h1 {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* ICONOS DERECHA */
+.hero-tech {
+  position: absolute;
+  bottom: 80px;
+  right: 80px;
+  text-align: center;
+}
+
+.icons {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.icons img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* LINEA */
+.linea {
+  height: 4px;
+  width: 300px;
+  background: linear-gradient(to right, #ff4ecd, #7aa2ff);
+}
+
+/* SOBRE MI */
+/* CONTENEDOR GENERAL */
+.sobre-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px;
+  color: white;
+}
+
+/* TITULO */
+.sobre-titulo {
+  font-size: 56px;
+  font-weight: 800;
+  text-align: left;
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+}
+
+/* CARD */
+.sobre-card {
+  background: #242424;
+  border-radius: 12px;
+  padding: 30px;
+
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+/* FOTO */
+.sobre-img {
+  text-align: center;
+}
+
+.sobre-img img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* NOMBRE Y ROL */
+.sobre-img .nombre {
+  display: block;
+  font-weight: bold;
+}
+
+.sobre-img .rol {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* TEXTO */
+.sobre-texto {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* RESALTADO */
+.sobre-texto .highlight {
+  color: #7aa2ff;
+  font-weight: 600;
+}
+
+/* ENLACES EN SOBRE MI */
+.sobre-enlaces {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sobre-enlaces a {
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  color: white; /* normalmente blanco */
+}
+
+.sobre-enlaces .email-link:hover {
+  color: #7148b3; /* hover violeta azulado */
+}
+
+.sobre-enlaces .linkedin-link:hover {
+  color: #0077b5; /* hover celeste LinkedIn */
+}
+
+.sobre-enlaces .github-link:hover {
+  color: #a205eb; /* hover violeta fuerte */
+}
+
+/* PROYECTOS */
+/* CONTENEDOR GENERAL */
+.proyectos-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+  color: white;
+}
+
+/* TITULO */
+.proyectos-titulo {
+  font-size: 56px;
+  font-weight: 800;
+  text-align: left;
+  margin-bottom: 60px;
+  letter-spacing: -1px;
+}
+
+/* GRID DE PROYECTOS */
+.proyectos-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* CARDS */
+.proyecto-card {
+  background: linear-gradient(135deg, rgba(26, 188, 156, 0.2), rgba(52, 211, 153, 0.2));
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+  max-width: 320px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid rgba(26, 188, 156, 0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(26, 188, 156, 1);
+  box-shadow: 0 20px 60px rgba(26, 188, 156, 0.3);
+}
+
+/* CARD DESTACADA (DEL MEDIO) */
+.proyecto-destacado {
+  transform: scale(1.05);
+}
+
+/* TITULO DE PROYECTO */
+.proyecto-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* DESCRIPCION */
+.proyecto-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ddd;
+  flex-grow: 1;
+}
+
+/* TECNOLOGIAS */
+.proyecto-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.proyecto-tech span {
+  background: rgba(138, 180, 248, 0.2);
+  border: 1px solid rgba(138, 180, 248, 0.5);
+  color: #8ab4f8;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* CONTACTO */
+.contacto-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 40px;
+  color: white;
+}
+
+.contact-card {
+  background: linear-gradient(135deg, rgba(26, 188, 156, 0.2), rgba(52, 211, 153, 0.2));
+  border-radius: 16px;
+  padding: 40px;
+  border: 2px solid rgba(26, 188, 156, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.contact-card h2 {
+  margin-top: 0;
+}
+
+.contact-card p {
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+.contact-form {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: #eee;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: rgba(138, 180, 248, 0.8);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* BOTON GITHUB */
+.btn-github {
+  background: linear-gradient(135deg, #ff4ecd, #7aa2ff);
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.btn-github:hover {
+  transform: translateX(5px);
+  box-shadow: 0 10px 25px rgba(255, 78, 205, 0.4);
+}
+
+/* FONDOS (CAMBIÁ ESTAS RUTAS) */
+#inicio {
+background-image: url("img/inicio.png");
+}
+
+#sobre-mi {
+background-image: url("img/sobre-mi.png");
+}
+
+#proyectos {
+background-image: url("img/proyectos.png");
+}
+
+#contacto {
+background-image: url("img/contacto.png");
+}
+
+/* OVERLAY OSCURO */
+.overlay {
+position: absolute;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.45);
+top: 0;
+left: 0;
+}
+
+/* CONTENIDO */
+.contenido {
+position: relative;
+z-index: 2;
+padding: 20px;
+}
+
+.contenido h1 {
+font-size: 3rem;
+margin-bottom: 10px;
+}
+
+.contenido h2 {
+font-size: 2.5rem;
+margin-bottom: 10px;
+}
+
+.contenido p {
+font-size: 1.2rem;
+opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contenido h1 {
+    font-size: 2rem;
+  }
+
+  .contenido h2 {
+    font-size: 1.8rem;
+  }
+
+  .navbar {
+    gap: 15px;
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  /* HERO: apilar y reducir tamaños en móviles */
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .hero-tech {
+    position: static;
+    bottom: auto;
+    right: auto;
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icons {
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .icons img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .linea {
+    width: 120px;
+    margin: 0 auto;
+  }
+
+  /* SOBRE MI: apilar card */
+  .sobre-container {
+    padding: 20px;
+  }
+
+  .sobre-titulo {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .sobre-card {
+    flex-direction: column;
+    padding: 20px;
+    gap: 18px;
+    text-align: left;
+  }
+
+  .sobre-img img {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 6px auto;
+  }
+
+  .sobre-texto {
+    font-size: 15px;
+  }
+
+  /* PROYECTOS: columna y tarjetas adaptables */
+  .proyectos-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .proyecto-card {
+    height: auto;
+    max-width: 95%;
+  }
+
+  .proyectos-titulo {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .contacto-container {
+    padding: 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+/* Ajustes extra para pantallas muy pequeñas */
+@media (max-width: 420px) {
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .icons img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sobre-titulo,
+  .proyectos-titulo {
+    font-size: 30px;
+  }
+
+  .navbar {
+    gap: 8px;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .contact-card {
+    padding: 20px;
+  }
+}
+
+/* GLOBAL: layout para sticky footer */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-body {
+  flex: 1;
+}
+
+/* FOOTER */
+.site-footer {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 30px 20px;
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 18px 18px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-left h2 {
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.footer-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.footer-right a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer-right a:hover {
+  color: #7aa2ff;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
