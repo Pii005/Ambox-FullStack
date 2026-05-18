@@ -70,9 +70,111 @@ function App() {
     localStorage.setItem("historial", JSON.stringify(historial));
   };
 
+  const evaluateExpression = (expression) => {
+    const clean = expression.replace(/\s+/g, "");
+    if (!/^[0-9.+\-*/]+$/.test(clean)) {
+      throw new Error("Expresión inválida");
+    }
+
+    const tokens = [];
+    let number = "";
+
+    for (const char of clean) {
+      if (/[0-9.]/.test(char)) {
+        number += char;
+      } else {
+        if (number) {
+          tokens.push(number);
+          number = "";
+        }
+        tokens.push(char);
+      }
+    }
+
+    if (number) {
+      tokens.push(number);
+    }
+
+    const parsedTokens = [];
+    for (let i = 0; i < tokens.length; i++) {
+      const token = tokens[i];
+      if (
+        token === "-" &&
+        (i === 0 || ["+", "-", "*", "/"].includes(tokens[i - 1]))
+      ) {
+        const next = tokens[i + 1];
+        if (!next || /^[+\-*/]$/.test(next)) {
+          throw new Error("Expresión inválida");
+        }
+        parsedTokens.push(String(-Number(next)));
+        i += 1;
+      } else {
+        parsedTokens.push(token);
+      }
+    }
+
+    if (
+      parsedTokens.length === 0 ||
+      /^[+\-*/]$/.test(parsedTokens[parsedTokens.length - 1])
+    ) {
+      throw new Error("Expresión inválida");
+    }
+
+    const applyOp = (a, op, b) => {
+      if (op === "+") return a + b;
+      if (op === "-") return a - b;
+      if (op === "*") return a * b;
+      if (op === "/") {
+        if (b === 0) throw new Error("División por cero");
+        return a / b;
+      }
+      throw new Error("Operador inválido");
+    };
+
+    const numbers = [];
+    const operators = [];
+
+    for (let i = 0; i < parsedTokens.length; i++) {
+      if (i % 2 === 0) {
+        const value = Number(parsedTokens[i]);
+        if (Number.isNaN(value)) throw new Error("Número inválido");
+        numbers.push(value);
+      } else {
+        const op = parsedTokens[i];
+        if (!["+", "-", "*", "/"].includes(op)) {
+          throw new Error("Operador inválido");
+        }
+        operators.push(op);
+      }
+    }
+
+    const highPrecedenceNumbers = [numbers[0]];
+    const highPrecedenceOps = [];
+
+    for (let i = 0; i < operators.length; i++) {
+      const op = operators[i];
+      const nextNumber = numbers[i + 1];
+      if (op === "*" || op === "/") {
+        const current = highPrecedenceNumbers.pop();
+        highPrecedenceNumbers.push(applyOp(current, op, nextNumber));
+      } else {
+        highPrecedenceOps.push(op);
+        highPrecedenceNumbers.push(nextNumber);
+      }
+    }
+
+    let result = highPrecedenceNumbers[0];
+    for (let i = 0; i < highPrecedenceOps.length; i++) {
+      result = applyOp(result, highPrecedenceOps[i], highPrecedenceNumbers[i + 1]);
+    }
+
+    return result;
+  };
+
   const calculate = () => {
     try {
-      const res = eval(input).toString();
+      const result = evaluateExpression(input);
+      const res = result.toString();
       setInput(res);
       guardardatos(input, res);
 
